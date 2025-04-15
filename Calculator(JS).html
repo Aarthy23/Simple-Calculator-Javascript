@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="Calculator(JS).css">
+    <title>Simple Calculator</title>
+</head>
+<body>
+ 
+    <!-- Input text - Display -->
+<div class="display">
+    <input type="text" id="input_type"  /> <br><br>
+
+    <!-- Buttons -->
+<div class="buttons">
+    <button id="seven" onclick="show('7')" >7</button>
+    <button id="eight"  onclick="show('8')">8</button>
+    <button id="nine"  onclick="show('9')">9</button>
+    <button id="multiple" onclick="show('/')">/</button> <br> <br>
+
+    <button id="four" onclick="show('4')">4</button>
+    <button id="five" onclick="show('5')">5</button>
+    <button id="six" onclick="show('6')">6</button>
+    <button id="subtract" onclick="show('*')">*</button> <br> <br>
+
+    <button id="one" onclick="show('1')">1</button>
+    <button id="two" onclick="show('2')">2</button>
+    <button id="three" onclick="show('3')">3</button>
+    <button id="add" onclick="show('-')">-</button> <br> <br>
+
+    <button id="zero" onclick="show('0')">0</button>
+    <button id="dot" onclick="show('.')">.</button>
+    <button id="equalto" onclick="cal()">=</button>
+    <button id="add" onclick="show('+')">+</button> <br> <br>
+   
+
+    <button class="clear" onclick="clearDisplay()">C</button>
+    <button class="del" onclick="del()">Del</button>
+    </div>
+</div>
+
+<script>
+    a = document.getElementById("input_type");
+    
+    function show(value) {
+      a.value = a.value + value;
+    }
+
+    function cal() {
+      calculate = eval(a.value);
+      console.log(calculate);
+      document.getElementById("input_type").value = calculate;
+    }
+
+    function clearDisplay() {
+      a.value = "";
+    }
+
+    function del(){
+      a.value = a.value.slice(0,-1);
+    }
+
+</script>
+
+
+
+
+
+</body>
+</html>
